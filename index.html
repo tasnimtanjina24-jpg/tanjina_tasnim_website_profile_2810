@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanjina Tasnim | Premium Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f4f7ff, #eefcff, #fff4fb);
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(180deg, #0f172a, #1e3a8a, #7c3aed);
+      color: white;
+      padding: 28px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .profile-top {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .profile-top img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.25);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      margin-bottom: 14px;
+    }
+
+    .profile-top h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .profile-top p {
+      font-size: 13px;
+      color: #dbeafe;
+      margin-top: 8px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .nav button {
+      border: none;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      text-align: left;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .nav button:hover,
+    .nav button.active {
+      background: linear-gradient(90deg, #06b6d4, #ec4899);
+      transform: translateX(3px);
+    }
+
+    .sidebar-footer {
+      margin-top: 28px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 13px;
+      color: #e0f2fe;
+      line-height: 1.7;
+    }
+
+    .main {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 30px;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(255,255,255,0.65);
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #38bdf8, #8b5cf6, #ec4899);
+      padding: 8px;
+      border-radius: 28px;
+      box-shadow: 0 14px 35px rgba(99, 102, 241, 0.25);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #dbeafe, #fce7f3);
+      color: #1d4ed8;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero-text h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h3 {
+      font-size: 18px;
+      color: #db2777;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini-box {
+      border-radius: 18px;
+      padding: 14px;
+      color: white;
+      font-size: 14px;
+      line-height: 1.7;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.08);
+    }
+
+    .c1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+    .c2 { background: linear-gradient(135deg, #d946ef, #ec4899); }
+    .c3 { background: linear-gradient(135deg, #10b981, #14b8a6); }
+    .c4 { background: linear-gradient(135deg, #f59e0b, #f97316); }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .about-box p,
+    .content-text {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .timeline-item,
+    .edu-item,
+    .pub-item,
+    .project-item,
+    .contact-item {
+      background: white;
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      border-left: 6px solid #38bdf8;
+    }
+
+    .timeline-item:nth-child(2) { border-left-color: #ec4899; }
+    .pub-item:nth-child(2) { border-left-color: #10b981; }
+    .project-item:nth-child(2) { border-left-color: #f59e0b; }
+    .project-item:nth-child(3) { border-left-color: #8b5cf6; }
+
+    .item-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .item-meta {
+      color: #7c3aed;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .item-text,
+    .timeline-item ul li {
+      color: #475569;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      color: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .icon1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+    .icon2 { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .icon3 { background: linear-gradient(135deg, #10b981, #14b8a6); }
+    .icon4 { background: linear-gradient(135deg, #f59e0b, #f97316); }
+    .icon5 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .icon6 { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .icon7 { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+    .icon8 { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .icon9 { background: linear-gradient(135deg, #6366f1, #4338ca); }
+
+    .skill-card h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #64748b;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .two-col,
+      .contact-grid,
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 18px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .hero,
+      .two-col,
+      .contact-grid,
+      .skills-grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h2 {
+        font-size: 32px;
+      }
+
+      .hero-image img {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile-top">
+        <img src="profile_web.jpg" alt="Tanjina Tasnim">
+        <h1>Tanjina Tasnim</h1>
+        <p>Senior Data Analyst | Machine Learning Researcher</p>
+      </div>
+
+      <div class="nav">
+        <button class="nav-btn active" onclick="showPage('home', this)">🏠 Home</button>
+        <button class="nav-btn" onclick="showPage('about', this)">🙋 About</button>
+        <button class="nav-btn" onclick="showPage('experience', this)">💼 Experience</button>
+        <button class="nav-btn" onclick="showPage('education', this)">🎓 Education</button>
+        <button class="nav-btn" onclick="showPage('publications', this)">📚 Publications</button>
+        <button class="nav-btn" onclick="showPage('skills', this)">✨ Skills</button>
+        <button class="nav-btn" onclick="showPage('projects', this)">🚀 Projects</button>
+        <button class="nav-btn" onclick="showPage('contact', this)">📩 Contact</button>
+      </div>
+
+
+    </aside>
+
+    <main class="main">
+
+      <!-- HOME -->
+      <section id="home" class="page active">
+        <div class="hero">
+          <div class="hero-image">
+            <img src="profile_web.jpg" alt="Tanjina Tasnim">
+          </div>
+
+          <div class="card hero-text">
+            <div class="badge">Data • Research • Quality Analytics</div>
+            <h2>Tanjina Tasnim</h2>
+            <h3>Senior Data Analyst | Machine Learning Researcher</h3>
+            <p>
+              I am a Senior Data Analyst and Machine Learning Researcher with nearly six years of
+              professional experience applying statistical methods in a USFDA-regulated analytical environment.
+            </p>
+            <p>
+              My work combines quality assurance analytics, machine learning research, reproducibility,
+              real-world datasets, and data-driven decision making.
+            </p>
+
+            <div class="mini-grid">
+              <div class="mini-box c2"><strong>Email</strong><br>tanjinatasnim@yahoo.com</div>
+              <div class="mini-box c3"><strong>Location</strong><br>Dhaka, Bangladesh</div>
+              <div class="mini-box c4"><strong>Organization</strong><br>BEXIMCO Pharmaceuticals PLC.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="page">
+        <div class="card about-box">
+          <div class="section-title">About Me</div>
+          <div class="section-subtitle">Academic, analytical, and research-focused professional profile</div>
+
+          <p>
+            My broader research interest lies at the intersection of applied statistics, machine learning,
+            optimization, control theory, and healthcare analytics. I am especially motivated to work on
+            problems where mathematical modeling and intelligent data analysis can support better decision-making
+            in health and biomedical systems.
+          </p>
+
+          <p>
+            In the future, I aim to contribute to the development of robust, interpretable, and practically
+            applicable predictive models for real-world datasets, especially in disease modeling, health risk
+            prediction, and data-driven intervention design.
+          </p>
+
+          <p>
+            I am currently engaged in ongoing machine learning research involving feature engineering,
+            algorithm comparison, and performance evaluation. I am proficient in Python and R for statistical
+            analysis and machine learning applications.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="page">
+        <div class="section-title">Work Experience</div>
+        <div class="section-subtitle">Professional journey in quality assurance and statistical analysis</div>
+
+        <div class="timeline-item">
+          <div class="item-title">Senior Quality Assurance Executive, USFDA Plant</div>
+          <div class="item-meta">BEXIMCO Pharmaceuticals PLC. | Tongi, Gazipur | 2024 - Present</div>
+          <ul>
+            <li>Conduct statistical analysis for Process Validation, Product Quality Review (PQR), and Continuous Process Verification (CPV).</li>
+            <li>Perform trend analysis of stability data and Out-of-Trend (OOT) and control limit analysis.</li>
+            <li>Prepare analytical and summary reports including water system and vendor performance reports.</li>
+            <li>Review, create, and update Quality Assurance documentation ensuring regulatory compliance and data integrity.</li>
+            <li>Manage Product Technology Transfer activities for OSD, MDI, and DPI products.</li>
+            <li>Conduct and participate in training sessions and team coordination activities.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-title">Executive, Quality Assurance, USFDA Plant</div>
+          <div class="item-meta">BEXIMCO Pharmaceuticals PLC. | Tongi, Gazipur | 2020 - 2024</div>
+          <ul>
+            <li>Applied statistical methods for process validation, process capability, and performance assessment.</li>
+            <li>Performed trend analysis, deviation analysis, and quality monitoring in a regulated environment.</li>
+            <li>Prepared technical reports and maintained SOPs, protocols, and analytical reports.</li>
+            <li>Worked extensively with large-scale real-world datasets with strong analytical rigor and reproducibility.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="page">
+        <div class="section-title">Education</div>
+        <div class="section-subtitle">Academic qualifications</div>
+
+        <div class="edu-item">
+          <div class="item-title">Master of Science in Statistics</div>
+          <div class="item-meta">University of Dhaka | 2018 - 2019</div>
+          <div class="item-text">CGPA: 3.50 out of 4.00</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-title">Bachelor of Science in Statistic</div>
+          <div class="item-meta">University of Dhaka | 2013 - 2017</div>
+          <div class="item-text">CGPA: 3.50 out of 4.00</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-title">Higher Secondary Certificate in Science</div>
+          <div class="item-meta">B A F Shaheen College, Dhaka | 2010-2011</div>
+          <div class="item-text">GPA: 5.00 out of 5.00</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-title">Secondary School Certificate in Science</div>
+          <div class="item-meta">B A F Shaheen College, Dhaka | 2008-2009</div>
+          <div class="item-text">GPA: 5.00 out of 5.00</div>
+        </div>
+
+
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications" class="page">
+        <div class="section-title">Publications</div>
+        <div class="section-subtitle">Research publications and academic work</div>
+
+        <div class="pub-item">
+          <div class="item-title">Integrating Machine Learning with Incentive Stackelberg Game for Optimal Control of HIV/AIDS Model</div>
+          <div class="item-meta">Under review at Mathematical Methods in the Applied Sciences (Wiley, Q1)</div>
+          <div class="item-text">Manuscript ID: 8213502</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="item-title">Dynamic Nash Game for Linear Stochastic Control with Markov Jump in Mpox</div>
+          <div class="item-meta">Results in Control and Optimization | 2026</div>
+          <div class="item-text">Masud, M. A. B., Tasnim, T., Ahmed, M., &amp; Rahman, M. K. DOI: 10.1016/j.rico.2025.100640</div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="page">
+        <div class="section-title">Skills & Tools</div>
+        <div class="section-subtitle">Relevant colorful icons with core professional tools</div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon icon1">🐍</div>
+            <h4>Python</h4>
+            <p>Machine learning, data processing, and analytical workflow development.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon2">📊</div>
+            <h4>R</h4>
+            <p>Statistical computing, modeling, and research-oriented analysis.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon3">📈</div>
+            <h4>Minitab</h4>
+            <p>Process capability, quality analysis, validation, and reporting.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon4">🧮</div>
+            <h4>SPSS</h4>
+            <p>Statistical analysis, interpretation, and structured data evaluation.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon5">🗂️</div>
+            <h4>STATA</h4>
+            <p>Applied statistics, structured quantitative analysis, and econometrics.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon6">🔬</div>
+            <h4>MATLAB</h4>
+            <p>Mathematical computation and technical modeling support.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon7">💻</div>
+            <h4>Google Colab</h4>
+            <p>Notebook-based experimentation and machine learning workflow support.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon8">🏢</div>
+            <h4>Oracle ERP</h4>
+            <p>Enterprise process support and system-based documentation workflow.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon9">📋</div>
+            <h4>Statistical Analysis</h4>
+            <p>Inference, process validation, performance review, and data interpretation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="page">
+        <div class="section-title">Projects, Certifications & Ongoing Work</div>
+        <div class="section-subtitle">Research activities, certifications, and current interests</div>
+
+        <div class="two-col">
+          <div>
+            <div class="project-item">
+              <div class="item-title">Academic Projects</div>
+              <div class="item-text">
+                Consumer Satisfaction & Perception Towards Online Shopping.
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-title">Master’s Research Work</div>
+              <div class="item-text">
+                Practical work on Design of Experiments, Statistical Inference, and Advanced Econometrics under faculty supervision.
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-title">Ongoing Machine Learning Research</div>
+              <div class="item-text">
+                Working with diabetic patient datasets, focusing on data preprocessing, feature engineering, algorithm comparison, and evaluation metrics.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-item">
+              <div class="item-title">Certifications</div>
+              <div class="item-text">
+                Introduction to Six Sigma, ChatGPT for Cybersecurity, Introduction to Minitab, Effective Teamwork, Critical Thinking for Professional Success, Introduction to Data Analysis, Minitab Statistical Software, Image Recognition using Machine Learning, Machine Learning using Python.
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-title">Leadership & Interests</div>
+              <div class="item-text">
+                Demonstrated leadership skills through collaborative research work, team-based problem solving, and coordination of analytical tasks. Interests include reading books, computer coding, travelling, and cooking.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="page">
+        <div class="section-title">Contact</div>
+        <div class="section-subtitle">Professional contact information</div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>📩 Email</strong>
+            <div class="item-text">tanjinatasnim@yahoo.com</div>
+          </div>
+
+
+          <div class="contact-item">
+            <strong>📍 Location</strong>
+            <div class="item-text">Tejgaon, Dhaka, Bangladesh</div>
+          </div>
+
+          <div class="contact-item">
+            <strong>🏢 Workplace</strong>
+            <div class="item-text">BEXIMCO Pharmaceuticals PLC.</div>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          © 2026 Tanjina Tasnim. All rights reserved.
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function showPage(pageId, clickedBtn) {
+      var pages = document.querySelectorAll('.page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+
+      document.getElementById(pageId).classList.add('active');
+
+      var buttons = document.querySelectorAll('.nav-btn');
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove('active');
+      }
+
+      clickedBtn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
