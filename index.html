@@ -95,16 +95,6 @@
       transform: translateX(3px);
     }
 
-    .sidebar-footer {
-      margin-top: 28px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 16px;
-      font-size: 13px;
-      color: #e0f2fe;
-      line-height: 1.7;
-    }
-
     .main {
       margin-left: 280px;
       width: calc(100% - 280px);
@@ -194,10 +184,34 @@
       box-shadow: 0 10px 18px rgba(0,0,0,0.08);
     }
 
+    .mini-box a {
+      color: white;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
+    .website-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: white;
+      color: #2563eb !important;
+      border-radius: 999px;
+      text-decoration: none !important;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .website-link:hover {
+      background: #eff6ff;
+    }
+
     .c1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
     .c2 { background: linear-gradient(135deg, #d946ef, #ec4899); }
     .c3 { background: linear-gradient(135deg, #10b981, #14b8a6); }
     .c4 { background: linear-gradient(135deg, #f59e0b, #f97316); }
+    .c5 { background: linear-gradient(135deg, #7c3aed, #4f46e5); }
+    .c6 { background: linear-gradient(135deg, #0f766e, #14b8a6); }
 
     .section-title {
       font-size: 32px;
@@ -265,7 +279,7 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
@@ -290,24 +304,35 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 34px;
+      font-size: 30px;
       color: white;
       box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     }
 
-    .icon1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
-    .icon2 { background: linear-gradient(135deg, #ec4899, #db2777); }
-    .icon3 { background: linear-gradient(135deg, #10b981, #14b8a6); }
-    .icon4 { background: linear-gradient(135deg, #f59e0b, #f97316); }
-    .icon5 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-    .icon6 { background: linear-gradient(135deg, #06b6d4, #0891b2); }
-    .icon7 { background: linear-gradient(135deg, #f43f5e, #e11d48); }
-    .icon8 { background: linear-gradient(135deg, #22c55e, #16a34a); }
-    .icon9 { background: linear-gradient(135deg, #6366f1, #4338ca); }
+    .icon1  { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+    .icon2  { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .icon3  { background: linear-gradient(135deg, #10b981, #14b8a6); }
+    .icon4  { background: linear-gradient(135deg, #f59e0b, #f97316); }
+    .icon5  { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .icon6  { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .icon7  { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+    .icon8  { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .icon9  { background: linear-gradient(135deg, #6366f1, #4338ca); }
     .icon10 { background: linear-gradient(135deg, #111827, #374151); }
+    .icon11 { background: linear-gradient(135deg, #1d4ed8, #2563eb); }
+    .icon12 { background: linear-gradient(135deg, #2563eb, #1e40af); }
+    .icon13 { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+    .icon14 { background: linear-gradient(135deg, #4f46e5, #4338ca); }
+    .icon15 { background: linear-gradient(135deg, #14b8a6, #0f766e); }
+    .icon16 { background: linear-gradient(135deg, #10a37f, #0f766e); }
+    .icon17 { background: linear-gradient(135deg, #a855f7, #7e22ce); }
+    .icon18 { background: linear-gradient(135deg, #111827, #4b5563); }
+    .icon19 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .icon20 { background: linear-gradient(135deg, #2563eb, #7c3aed); }
+    .icon21 { background: linear-gradient(135deg, #0f172a, #334155); }
 
     .skill-card h4 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 8px;
@@ -317,6 +342,11 @@
       font-size: 14px;
       line-height: 1.8;
       color: #64748b;
+    }
+
+    .skill-card a {
+      color: #2563eb;
+      text-decoration: underline;
     }
 
     .two-col {
@@ -345,11 +375,16 @@
       font-size: 14px;
     }
 
+    @media (max-width: 1200px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 1100px) {
       .hero,
       .two-col,
-      .contact-grid,
-      .skills-grid {
+      .contact-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -381,10 +416,6 @@
 
       .hero-text h2 {
         font-size: 32px;
-      }
-
-      .hero-image img {
-        height: 360px;
       }
     }
 
@@ -464,9 +495,37 @@
             </p>
 
             <div class="mini-grid">
-              <div class="mini-box c2"><strong>Email</strong><br>tanjinatasnim@yahoo.com</div>
-              <div class="mini-box c3"><strong>Location</strong><br>Dhaka, Bangladesh</div>
-              <div class="mini-box c4"><strong>Organization</strong><br>BEXIMCO Pharmaceuticals PLC.</div>
+              <div class="mini-box c2">
+                <strong>Personal Email</strong><br>
+                <a href="mailto:tasnimtanjina24@gmail.com">tasnimtanjina24@gmail.com</a>
+              </div>
+
+              <div class="mini-box c3">
+                <strong>Location</strong><br>
+                Dhaka, Bangladesh
+              </div>
+
+              <div class="mini-box c4">
+                <strong>Current Role</strong><br>
+                Senior Executive, Beximco Pharmaceuticals PLC.
+              </div>
+
+              <div class="mini-box c1">
+                <strong>Website</strong><br>
+                <a class="website-link" href="https://tasnimtanjina24-jpg.github.io/tanjina_tasnim_website_profile_2810/" target="_blank">
+                  Visit Personal Website
+                </a>
+              </div>
+
+              <div class="mini-box c5">
+                <strong>Field</strong><br>
+                Statistical Data Analyst
+              </div>
+
+              <div class="mini-box c6">
+                <strong>Organization</strong><br>
+                BEXIMCO Pharmaceuticals PLC.
+              </div>
             </div>
           </div>
         </div>
@@ -580,7 +639,7 @@
       <!-- SKILLS -->
       <section id="skills" class="page">
         <div class="section-title">Skills & Tools</div>
-        <div class="section-subtitle">Relevant colorful icons with core professional tools</div>
+        <div class="section-subtitle">Core analytical, software, Microsoft, and AI tools</div>
 
         <div class="skills-grid">
           <div class="skill-card">
@@ -641,10 +700,76 @@
             <div class="skill-icon icon10">💻</div>
             <h4>GitHub</h4>
             <p>
-              <a href="https://github.com/https://github.com/tasnimtanjina24" target="_blank">
+              <a href="https://github.com/your-github-username" target="_blank">
                 Projects, code repositories, and development portfolio.
               </a>
             </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon11">📗</div>
+            <h4>Microsoft Excel</h4>
+            <p>Spreadsheet analysis, reporting, dashboards, formulas, and data organization.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon12">📘</div>
+            <h4>Microsoft Word</h4>
+            <p>Professional documentation, formatting, report writing, and content preparation.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon13">📩</div>
+            <h4>Outlook</h4>
+            <p>Email communication, scheduling, meeting coordination, and professional correspondence.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon14">👥</div>
+            <h4>Microsoft Teams</h4>
+            <p>Team collaboration, meetings, chat communication, and work coordination.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon15">📂</div>
+            <h4>SharePoint</h4>
+            <p>Document sharing, team file management, collaboration, and workflow organization.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon16">🤖</div>
+            <h4>ChatGPT</h4>
+            <p>Research support, writing assistance, ideation, summarization, and productivity tasks.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon17">✨</div>
+            <h4>Claude</h4>
+            <p>Long-form analysis, drafting, content refinement, and structured reasoning support.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon18">⚡</div>
+            <h4>Grok</h4>
+            <p>Fast idea exploration, conversational assistance, and information support.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon19">💎</div>
+            <h4>Gemini</h4>
+            <p>Multimodal productivity, drafting, analytical assistance, and research support.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon20">🧠</div>
+            <h4>Copilot</h4>
+            <p>Writing assistance, workflow productivity, coding support, and smart suggestions.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon icon21">🔍</div>
+            <h4>DeepSeek</h4>
+            <p>Technical reasoning, coding help, analytical exploration, and problem solving.</p>
           </div>
         </div>
       </section>
