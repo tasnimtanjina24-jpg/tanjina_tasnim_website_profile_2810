@@ -102,7 +102,16 @@
       padding: 16px;
       font-size: 13px;
       color: #e0f2fe;
-      line-height: 1.7;
+      line-height: 1.8;
+    }
+
+    .sidebar-footer a {
+      color: #ffffff;
+      word-break: break-word;
+    }
+
+    .sidebar-footer a:hover {
+      text-decoration: underline;
     }
 
     .main {
@@ -125,25 +134,25 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-.hero {
-  display: block;
-  width: 100%;
-  margin-bottom: 26px;
-}
+    .hero {
+      display: block;
+      width: 100%;
+      margin-bottom: 26px;
+    }
 
-.card {
-  background: white;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-  border: none;
-  width: 100%;
-  min-height: calc(100vh - 60px);
-}
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border: none;
+      width: 100%;
+      min-height: calc(100vh - 60px);
+    }
 
-.hero-text {
-  width: 100%;
-}
+    .hero-text {
+      width: 100%;
+    }
 
     .badge {
       display: inline-block;
@@ -192,6 +201,12 @@
       font-size: 14px;
       line-height: 1.7;
       box-shadow: 0 10px 18px rgba(0,0,0,0.08);
+    }
+
+    .mini-box a {
+      color: white;
+      text-decoration: underline;
+      word-break: break-word;
     }
 
     .c1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
@@ -337,6 +352,12 @@
       font-size: 18px;
     }
 
+    .contact-item a {
+      color: #2563eb;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
     .footer-note {
       margin-top: 24px;
       text-align: center;
@@ -388,38 +409,38 @@
     }
 
     #home .card,
-#about .card,
-#about .about-box {
-  background: white !important;
-  background-image: none !important;
-  color: #1f2937 !important;
-}
+    #about .card,
+    #about .about-box {
+      background: white !important;
+      background-image: none !important;
+      color: #1f2937 !important;
+    }
 
-#home .hero-text,
-#about .about-box {
-  width: 100%;
-}
+    #home .hero-text,
+    #about .about-box {
+      width: 100%;
+    }
 
-#home .hero-text h2,
-#home .hero-text h3,
-#home .hero-text p,
-#about .section-title,
-#about .section-subtitle,
-#about p,
-#about .about-box p {
-  color: #1f2937 !important;
-}
+    #home .hero-text h2,
+    #home .hero-text h3,
+    #home .hero-text p,
+    #about .section-title,
+    #about .section-subtitle,
+    #about p,
+    #about .about-box p {
+      color: #1f2937 !important;
+    }
 
-#home .badge {
-  background: #f3e8ff !important;
-  color: #2563eb !important;
-}
+    #home .badge {
+      background: #f3e8ff !important;
+      color: #2563eb !important;
+    }
 
-#about .about-box {
-  min-height: calc(100vh - 60px);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-  border-radius: 24px;
-}
+    #about .about-box {
+      min-height: calc(100vh - 60px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border-radius: 24px;
+    }
   </style>
 </head>
 <body>
@@ -443,7 +464,15 @@
         <button class="nav-btn" onclick="showPage('contact', this)">📩 Contact</button>
       </div>
 
-
+      <div class="sidebar-footer">
+        <strong>Professional Links</strong><br><br>
+        <a href="mailto:tasnimtanjina24@gmail.com">Personal Email</a><br>
+        <a href="https://orcid.org/0009-0000-5561-2889" target="_blank">ORCID</a><br>
+        <a href="https://www.linkedin.com/in/tanjina-tasnim-4ab64bba/" target="_blank">LinkedIn</a><br>
+        <a href="https://scholar.google.com/citations?user=vysrNSwAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
+        <a href="https://www.researchgate.net/scientific-contributions/Tanjina-Tasnim-2333616006" target="_blank">ResearchGate</a><br>
+        <a href="https://tasnimtanjina24-jpg.github.io/tanjina_tasnim_website_profile_2810/" target="_blank">Website</a>
+      </div>
     </aside>
 
     <main class="main">
@@ -451,7 +480,6 @@
       <!-- HOME -->
       <section id="home" class="page active">
         <div class="hero">
-  
           <div class="card hero-text">
             <div class="badge">Data • Research • Quality Analytics</div>
             <h2>Tanjina Tasnim</h2>
@@ -466,9 +494,24 @@
             </p>
 
             <div class="mini-grid">
-              <div class="mini-box c2"><strong>Email</strong><br>tanjinatasnim@yahoo.com</div>
-              <div class="mini-box c3"><strong>Location</strong><br>Dhaka, Bangladesh</div>
-              <div class="mini-box c4"><strong>Organization</strong><br>BEXIMCO Pharmaceuticals PLC.</div>
+              <div class="mini-box c2">
+                <strong>Personal Email</strong><br>
+                <a href="mailto:tasnimtanjina24@gmail.com">tasnimtanjina24@gmail.com</a>
+              </div>
+              <div class="mini-box c3">
+                <strong>Location</strong><br>
+                Dhaka, Bangladesh
+              </div>
+              <div class="mini-box c4">
+                <strong>Organization</strong><br>
+                BEXIMCO Pharmaceuticals PLC.
+              </div>
+              <div class="mini-box c1">
+                <strong>Website</strong><br>
+                <a href="https://tasnimtanjina24-jpg.github.io/tanjina_tasnim_website_profile_2810/" target="_blank">
+                  Visit Personal Website
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -559,8 +602,6 @@
           <div class="item-meta">B A F Shaheen College, Dhaka | 2008-2009</div>
           <div class="item-text">GPA: 5.00 out of 5.00</div>
         </div>
-
-
       </section>
 
       <!-- PUBLICATIONS -->
@@ -697,10 +738,11 @@
 
         <div class="contact-grid">
           <div class="contact-item">
-            <strong>📩 Email</strong>
-            <div class="item-text">tanjinatasnim@yahoo.com</div>
+            <strong>📩 Personal Email</strong>
+            <div class="item-text">
+              <a href="mailto:tasnimtanjina24@gmail.com">tasnimtanjina24@gmail.com</a>
+            </div>
           </div>
-
 
           <div class="contact-item">
             <strong>📍 Location</strong>
@@ -710,6 +752,41 @@
           <div class="contact-item">
             <strong>🏢 Workplace</strong>
             <div class="item-text">BEXIMCO Pharmaceuticals PLC.</div>
+          </div>
+
+          <div class="contact-item">
+            <strong>🆔 ORCID</strong>
+            <div class="item-text">
+              <a href="https://orcid.org/0009-0000-5561-2889" target="_blank">https://orcid.org/0009-0000-5561-2889</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <strong>💼 LinkedIn</strong>
+            <div class="item-text">
+              <a href="https://www.linkedin.com/in/tanjina-tasnim-4ab64bba/" target="_blank">View LinkedIn Profile</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <strong>🎓 Google Scholar</strong>
+            <div class="item-text">
+              <a href="https://scholar.google.com/citations?user=vysrNSwAAAAJ&hl=en" target="_blank">View Google Scholar</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <strong>📘 ResearchGate</strong>
+            <div class="item-text">
+              <a href="https://www.researchgate.net/scientific-contributions/Tanjina-Tasnim-2333616006" target="_blank">View ResearchGate Profile</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <strong>🌐 Website</strong>
+            <div class="item-text">
+              <a href="https://tasnimtanjina24-jpg.github.io/tanjina_tasnim_website_profile_2810/" target="_blank">Visit Personal Website</a>
+            </div>
           </div>
         </div>
 
